@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//components
+import Header from "./components/Headers/Header";
+import Footer from "./components/Footers/Footer";
+import Home from "./pages/user/Home";
+import LoginForm from "./components/Forms/LoginForm";
 
-function App() {
+//css
+import "./App.css";
+import Dashboard from "./pages/admin/Dashboard";
+import AuthMiddelware from "./middleware/AuthMiddelware";
+import Cart from "./pages/user/cart/cart";
+import ProductDetails from "./pages/user/Shop/ProductDetails";
+import { CartProvider } from "./hooks/useCart";
+import { Toaster } from "react-hot-toast";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <CartProvider initialCart={[]}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/dashboard" element={AuthMiddelware(<Dashboard />)} />
+            <Route path="*" element={<h1>Not Found</h1>} />
+            <Route path="/cart" element={AuthMiddelware(<Cart />)} />
+            <Route path="/product/detail/:id" element={<ProductDetails />} />
+          </Routes>
+          <Footer />
+          <Toaster />
+        </CartProvider>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

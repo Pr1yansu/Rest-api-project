@@ -1,0 +1,22 @@
+.skeleton-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-item {
+    height: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    animation: loadingAnimation 1s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: 200px 0;
+    }
+}

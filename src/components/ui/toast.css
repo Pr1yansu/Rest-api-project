@@ -1,0 +1,41 @@
+.alert-success {
+    background: #2ecc71;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.alert-error {
+    background: #e74c3c;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.alert-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.alert-description {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}

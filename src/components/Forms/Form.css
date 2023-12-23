@@ -1,0 +1,37 @@
+/* form styles */
+
+form {
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    border-color: #2ecc71;
+}
+
+.btn-login {
+    background: #2ecc71;
+    color: #fff;
+    width: 100%;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
